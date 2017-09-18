@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/css">
+        . user{
+            color: #a41515;
+            width: auto;
+            height: auto;
+        }
+    </script>
+</head>
+<body>
+    <h1 style="background-color: royalblue">用户展示</h1>
+    <table class="user">
+        <thead>
+            <th>用户名</th>
+            <th>密码</th>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.user }}</td>
+                    <td>{{ user.pwd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

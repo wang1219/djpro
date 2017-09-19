@@ -7,7 +7,7 @@ $().ready(function() {
     console.log('new_task', 1);
 
     $form_add_task.on('submit', function (e) {
-        // e.preventDefault();
+        e.preventDefault();
         console.log('new_task', 2);
         new_task.content = $(this).find('input[name=content]').val();
         console.log('new_task', new_task);

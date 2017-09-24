@@ -15,6 +15,7 @@ body {
     max-width: 700px;
     margin: 0 auto;
     position: relative;
+    padding: 0 10px;
 }
 
 h1 {
@@ -23,6 +24,7 @@ h1 {
 
 input,
 .task-item,
+.task-detail,
 .task-detail-mask,
 textarea,
 button {
@@ -67,12 +69,24 @@ button {
     margin-right: 1%;
 }
 
+
+
+[type=submit] {
+    background: #46b1e4;
+}
+
+
 .add-task button[type=submit] {
     background: #c3f1f5;
     width: 15%;
 }
 
-.add-task button[type=submit]:hover {
+button.primary {
+    background: #c3f1f5;
+}
+
+.add-task button[type=submit]:hover,
+button.primary:hover {
     background: #ade9ef;
 }
 
@@ -95,6 +109,23 @@ button {
     transition: background .1s;
 }
 
+.task-item.completed {
+    color: #aaa;
+    /*background: rgba(255, 255, 255, .7);*/
+    opacity: 0.4;
+}
+
+.task-item.completed:after {
+    background: #aaa;
+    content: "";
+    height: 1px;
+    width: 97%;
+    position: relative;
+    top: -8px;
+    display: block;
+    float: right;
+}
+
 .task-item:hover {
     background: #f5f1f1;
 }
@@ -113,6 +144,11 @@ button {
     right: 0;
     width: 50%;
     height: 100%;
+    border-radius: 3px 0 0 3px;
+    overflow: auto;
+    -webkit-box-sizing: 0 1px 2px 1px rgba(0, 0, 0, .1);
+    -moz-box-sizing: 0 1px 2px 1px rgba(0, 0, 0, .1);
+    box-sizing: 0 1px 2px 1px rgba(0, 0, 0, .1);
 }
 
 .task-detail .content {
@@ -121,14 +157,49 @@ button {
     cursor: pointer;
 }
 
-.task-detail > * {
-    margin-bottom: 10px;
+.task-detail .input-item {
+    margin-bottom: 5px;
 }
 
 .task-detail-mask {
+    position: fixed; /*将元素作用于整个页面*/
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     background: rgba(30, 30, 30, .6);
+}
+
+.task-content {
+    margin-left: 10px;
+}
+
+.action {
+    color: #888;
+    font-size: 90%;
+}
+
+.action:hover {
+    color: #333;
+}
+
+.fr {
+    float: right;
+}
+
+
+.msg {
+    display: none;
+    text-align: center;
+    background: #ffe264;
+    padding: 10px;
+    color: #333;
+}
+
+.anchor {
+    cursor: pointer;
+}
+
+.alerter {
+    opacity: 0;
 }

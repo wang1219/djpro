@@ -266,6 +266,7 @@
         $task_delete_trigger.on('click', function () {
             var $this = $(this);
             var $item = $this.parent().parent();
+            console.log('$item', $item);
 
             pop('确定要删除吗？').then(function (result) {
                 result ? delete_task($item.data('index')) : null;
